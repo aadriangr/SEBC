@@ -17,3 +17,21 @@ I create a couple of volumes extra for my datanades to store hdfs data.
 <code>sudo tune2fs -l /dev/xvdb1 | grep 'Reserved block count'</code>
 ![File System Reserved](../png/file_system_reserved.png)
 
+# Disable transparent hugepage support
+Disable THP on reboot
+<code>sudo chmod +x /etc/rc.d/rc.local</code>
+<code>sudo vi /etc/rc.d/rc.local</code>
+<code>  echo never > /sys/kernel/mm/transparent_hugepage/enabled</code>
+<code>  echo never > /sys/kernel/mm/transparent_hugepage/defrag</code>
+
+I'm on a CentOS 7 so I need an extra step
+<code>sudo vi /etc/default/grub</code>
+<code>  transparent_hugepage=never</code>
+<code>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</code>
+
+Disable THP in this boot
+<code>sudo sh -c "echo 'never' > /sys/kernel/mm/transparent_hugepage/enabled"</code>
+<code>sudo sh -c "echo 'never' > /sys/kernel/mm/transparent_hugepage/defrag" </code>
+
+Disable Tuned
+![Disable Tuned](../png/disable_tuned.png)
