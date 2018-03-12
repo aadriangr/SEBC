@@ -1,7 +1,10 @@
 #Install the mysql-server in master and slave
 Install and configure /etc/my.conf
-<code>sudo yum -y install mariadb-server</code>
-<code>sudo vi /etc/my.conf</code>
+```
+sudo yum -y install mariadb-server
+sudo vi /etc/my.conf
+```
+Content of the /etc/my.conf
 ```
 [mysqld]
 transaction-isolation = READ-COMMITTED
@@ -49,27 +52,30 @@ pid-file=/var/run/mariadb/mariadb.pid
 ```
 
 Start Services
-<code>sudo systemctl enable mariadb</code>
-<code>sudo systemctl start mariadb</code>
+```
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+```
 
 Configure root user
 Yes to all except "disallow root to conect remotely"
-<code>/usr/bin/mysql_secure_installation</code>
-<code>sudo systemctl restart mariadb</code>
+```
+/usr/bin/mysql_secure_installation
+sudo systemctl restart mariadb
+```
 
 # Configure Master
-<code>
+```
 mysql -u ... -p
-
-GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'ip-10-0-0-166.eu-west-1.compute.internal' IDENTIFIED BY 'bootcamp';
+  GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'ip-10-0-0-166.eu-west-1.compute.internal' IDENTIFIED BY 'bootcamp';
   SET GLOBAL binlog_format = 'ROW'; 
   FLUSH TABLES WITH READ LOCK;
   SHOW MASTER STATUS;
   UNLOCK TABLES;
-</code>
+```
 
 # Configure Slave
-<code>
+```
 mysql -u ... -p
   CHANGE MASTER TO
     MASTER_HOST='ip-10-0-0-148.eu-west-1.compute.internal',
@@ -80,7 +86,7 @@ mysql -u ... -p
     MASTER_LOG_POS=440;
   START SLAVE;
   SHOW SLAVE STATUS \G
-</code>
+```
 ![Replicating](../png/replicating.png)
 
 # Configure clients in all machines
@@ -89,8 +95,8 @@ Install client
 
 Donload JDBC Driver
 ```
-wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz  
-tar zxvf mysql-connector-java-5.1.45.tar.gz  
-sudo mkdir -p /usr/share/java/  
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz
+tar zxvf mysql-connector-java-5.1.45.tar.gz
+sudo mkdir -p /usr/share/java/
 sudo cp mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar /usr/share/java/mysql-connector-java.jar
 ```
