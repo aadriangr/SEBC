@@ -39,10 +39,10 @@ Disable Tuned
 # List your network interface configuration
 ![Network Interface](../png/network_interface.png)
 
-#Show that forward and reverse host lookups are correctly resolved
+# Show that forward and reverse host lookups are correctly resolved
 ![nslookup](../png/nslookup.png)
 
-#Show the nscd service is running
+# Show the nscd service is running
 Install service
 <code>sudo yum -y install nscd</code>
 Start in reboot
@@ -51,3 +51,4 @@ Start for this boot
 <code>sudo systemctl start nscd</code>
 ![nscd](../png/nscd.png)
 
+# Show the ntpd service is running
