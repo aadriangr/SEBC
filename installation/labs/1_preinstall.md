@@ -52,3 +52,19 @@ Start for this boot
 ![nscd](../png/nscd.png)
 
 # Show the ntpd service is running
+Install it
+<code>sudo yum -y install ntp</code>
+Add servers
+<code>sudo vi /etc/ntp.conf</code>
+<code>  server 0.europe.pool.ntp.org</code>
+<code>  server 1.europe.pool.ntp.org</code>
+<code>  server 2.europe.pool.ntp.org</code>
+<code>  server 3.europe.pool.ntp.org</code>
+Start service
+<code>sudo chkconfig ntpd on</code>
+<code>sudo service ntpd start</code>
+Synchronize servers
+<code>ntpdate -u europe.pool.ntp.org</code>
+<code>hwclock --systohc</code>
+Verify
+![ntpd](../png/ntpd_servers.png)
