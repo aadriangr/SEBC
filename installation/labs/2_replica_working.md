@@ -88,7 +88,9 @@ Install client
 <code>sudo yum -y install mariadb</code>
 
 Donload JDBC Driver
-``wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz<br/ >
-tar zxvf mysql-connector-java-5.1.45.tar.gz<br/ >
-sudo mkdir -p /usr/share/java/<br/ >
+```
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz  
+tar zxvf mysql-connector-java-5.1.45.tar.gz  
+sudo mkdir -p /usr/share/java/  
 sudo cp mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar /usr/share/java/mysql-connector-java.jar
+```
