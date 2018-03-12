@@ -90,7 +90,7 @@ mysql -u ... -p
 ![Replicating](../png/replicating.png)
 
 # Configure clients in all machines
-Install client
+Install client  
 <code>sudo yum -y install mariadb</code>
 
 Donload JDBC Driver

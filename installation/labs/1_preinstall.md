@@ -1,5 +1,5 @@
 # Check vm.swappiness on all your nodes
-Modify swappiness for this boot
+Modify swappiness for this boot  
 <code>sudo sysctl -w vm.swappiness=1</code>
 
 Modify swappiness for future boots
@@ -53,20 +53,20 @@ Disable Tuned
 ![nslookup](../png/nslookup.png)
 
 # Show the nscd service is running
-Install service
+Install service  
 <code>sudo yum -y install nscd</code>
 
-Start in reboot
+Start in reboot  
 <code>sudo systemctl enable nscd</code>
 
-Start for this boot
+Start for this boot  
 <code>sudo systemctl start nscd</code>
 
 Verify
 ![nscd](../png/nscd.png)
 
 # Show the ntpd service is running
-Install it
+Install it  
 <code>sudo yum -y install ntp</code>
 
 Add servers
