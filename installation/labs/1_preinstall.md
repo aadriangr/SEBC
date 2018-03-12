@@ -35,3 +35,7 @@ Disable THP in this boot
 
 Disable Tuned
 ![Disable Tuned](../png/disable_tuned.png)
+
+# List your network interface configuration
+![Network Interface](../png/network_interface.png)
+
