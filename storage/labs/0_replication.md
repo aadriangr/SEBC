@@ -1,5 +1,6 @@
 #Use teragen to create a 500 MB file
 I have 3 Datanodes with two dedicated disks, so i use 6 mappers
+
 <code>yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar teragen  -Ddfs.replication=1 -Dmapreduce.job.maps=6 5242880 /jconca</code>
 
 It creates the following files
@@ -31,8 +32,9 @@ DataNodes service are atached to our internal network interface so it's not reac
 <code>hadoop distcp /jconca /jconcaDistCP</code>
 
 I also use the Backup utilitiy from Cloudera Manager.
-![BDR](bdr.png)
+![BDR](../png/bdr.png)
 
+# Browse the results
 The three folders are similar, distcp ones has a diferent block replication. Perhaps i must use -p[rbugpcaxt] options
 ```
 [hdfs@ip-10-0-0-148 centos]$ hdfs fsck /jconca -files -blocks | grep Average ; hdfs fsck /jconcaDistCP -files -blocks | grep Average; hdfs fsck /jconcaBDR -files -blocks | grep Average ;
