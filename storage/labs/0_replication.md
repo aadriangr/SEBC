@@ -25,7 +25,7 @@ The command fails after a long time, we try with a smaller dataset (1MB) and it 
 Caused by: org.apache.hadoop.ipc.RemoteException(java.io.IOException): File /jconca/.distcp.tmp.attempt_1520933211815_0006_m_000001_0 could only be replicated to 0 nodes instead of minReplication (=1).  There are 3 datanode(s) running and 3 node(s) are excluded in this operation.
 ```
 
-Partner's NameNode responses  with DataNodes internal adresses and my cluster can reach them. I fill /etc/hosts  file in all nodes with their public ips associated to their internal adresses. Unfortunately we have the same error.
+Partner's NameNode responses  with DataNodes internal adresses and my cluster can't reach them. I fill /etc/hosts  file in all nodes with their public ips associated to their internal adresses. Unfortunately we have the same error.
 
 DataNodes service are atached to our internal network interface so it's not reachable form outside, so we continue with the backup from my cluster to my cluster
 
