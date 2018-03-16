@@ -64,3 +64,41 @@ Re-enter password for principal "cloudera-scm@JCONCA.NL":
 Principal "cloudera-scm@JCONCA.NL" created.
 kadmin.local:  q
 ```
+
+```
+sudo vi /var/kerberos/krb5kdc/kadm5.acl 
+  */admin@JCONCA.COM *
+  cloudera-scm@JCONCA.COM admilc
+```
+
+```
+sudo vi /var/kerberos/krb5kdc/kadm5.acl 
+  */admin@JCONCA.NL *
+  cloudera-scm@JCONCA.NL admilc
+
+sudo kadmin.local
+  addpol admin
+  addpol users
+  addpol hosts
+  exit
+
+sudo systemctl enable krb5kdc
+sudo systemctl start krb5kdc
+sudo systemctl enable kadmin
+sudo systemctl start kadmin
+```
+
+```
+[centos@ip-10-0-0-33 ~]$ kinit cloudera-scm
+Password for cloudera-scm@JCONCA.NL:
+[centos@ip-10-0-0-33 ~]$ klist
+Ticket cache: FILE:/tmp/krb5cc_1000
+Default principal: cloudera-scm@JCONCA.NL
+
+Valid starting       Expires              Service principal
+03/16/2018 11:18:16  03/17/2018 11:18:16  krbtgt/JCONCA.NL@JCONCA.NL
+        renew until 03/23/2018 11:18:16
+[centos@ip-10-0-0-33 ~]$
+```
+  
+  
