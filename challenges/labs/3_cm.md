@@ -1,12 +1,13 @@
 ```
-[hdfs@ip-10-0-0-33 centos]$ hdfs dfs -ls /user
-Found 7 items
-drwxr-xr-x   - hdfs   supergroup          0 2018-03-16 10:25 /user/anupam
-drwxr-xr-x   - hdfs   supergroup          0 2018-03-16 10:25 /user/hilary
+[hdfs@ip-10-0-0-7 centos]$ hdfs dfs -ls /user
+Found 8 items
+drwxr-xr-x   - anupam supergroup          0 2018-03-16 10:25 /user/anupam
+drwxr-xr-x   - hilary supergroup          0 2018-03-16 10:25 /user/hilary
 drwxrwxrwx   - mapred hadoop              0 2018-03-16 10:17 /user/history
 drwxrwxr-t   - hive   hive                0 2018-03-16 10:18 /user/hive
 drwxrwxr-x   - hue    hue                 0 2018-03-16 10:18 /user/hue
 drwxrwxr-x   - impala impala              0 2018-03-16 10:18 /user/impala
+drwxr-xr-x   - jconca jconca              0 2018-03-16 10:38 /user/jconca
 drwxrwxr-x   - oozie  oozie               0 2018-03-16 10:18 /user/oozie
 ```
 
