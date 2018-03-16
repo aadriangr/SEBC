@@ -9,7 +9,18 @@ ec2-34-245-231-141.eu-west-1.compute.amazonaws.com 34.245.231.141 ip-10-0-0-236.
 ec2-34-244-83-63.eu-west-1.compute.amazonaws.com 34.244.83.63 ip-10-0-0-246.eu-west-1.compute.internal 10.0.0.246
 ```
 OS: Centos 7.4
+
 First node file system capacity: 50GB
+```
+[centos@ip-10-0-0-45 ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1       50G  2.2G   48G   5% /
+devtmpfs        7.8G     0  7.8G   0% /dev
+tmpfs           7.8G     0  7.8G   0% /dev/shm
+tmpfs           7.8G   17M  7.8G   1% /run
+tmpfs           7.8G     0  7.8G   0% /sys/fs/cgroup
+tmpfs           1.6G     0  1.6G   0% /run/user/1000
+```
 
 Yum repositories
 ```
