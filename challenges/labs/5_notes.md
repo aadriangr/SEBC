@@ -47,3 +47,20 @@ edit kdc.conf
   }
 ```
 
+Initializing database
+```
+sudo kdb5_util create -s
+```
+
+
+Creating cloudera-sm as an admin
+```
+[centos@ip-10-0-0-33 ~]$ sudo kadmin.local
+Authenticating as principal root/admin@JCONCA.NL with password.
+kadmin.local:    addprinc cloudera-scm@JCONCA.NL
+WARNING: no policy specified for cloudera-scm@JCONCA.NL; defaulting to no policy
+Enter password for principal "cloudera-scm@JCONCA.NL":
+Re-enter password for principal "cloudera-scm@JCONCA.NL":
+Principal "cloudera-scm@JCONCA.NL" created.
+kadmin.local:  q
+```
