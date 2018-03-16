@@ -2,17 +2,17 @@ Cloud provider: AWS
 
 Instances IPs
 ```
-ec2-34-251-104-209.eu-west-1.compute.amazonaws.com 34.251.104.209 ip-10-0-0-45.eu-west-1.compute.internal 10.0.0.45
-ec2-34-244-106-222.eu-west-1.compute.amazonaws.com 34.244.106.222 ip-10-0-0-100.eu-west-1.compute.internal 10.0.0.100
-ec2-34-244-137-79.eu-west-1.compute.amazonaws.com 34.244.137.79 ip-10-0-0-140.eu-west-1.compute.internal 10.0.0.140
-ec2-34-245-231-141.eu-west-1.compute.amazonaws.com 34.245.231.141 ip-10-0-0-236.eu-west-1.compute.internal  10.0.0.236
-ec2-34-244-83-63.eu-west-1.compute.amazonaws.com 34.244.83.63 ip-10-0-0-246.eu-west-1.compute.internal 10.0.0.246
+54.246.244.232   ip-10-0-0-7.eu-west-1.compute.internal
+52.208.110.143   ip-10-0-0-33.eu-west-1.compute.internal
+34.245.118.219   ip-10-0-0-51.eu-west-1.compute.internal
+34.245.162.29    ip-10-0-0-77.eu-west-1.compute.internal
+34.242.245.121   ip-10-0-0-212.eu-west-1.compute.internal
 ```
 OS: Centos 7.4
 
 First node file system capacity: 50GB
 ```
-[centos@ip-10-0-0-45 ~]$ df -h
+[centos@ip-10-0-0-7 ~]$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/xvda1       50G  2.2G   48G   5% /
 devtmpfs        7.8G     0  7.8G   0% /dev
@@ -24,7 +24,7 @@ tmpfs           1.6G     0  1.6G   0% /run/user/1000
 
 Yum repositories
 ```
-[centos@ip-10-0-0-45 ~]$ yum repolist enabled
+[centos@ip-10-0-0-7 ~]$ yum repolist enabled
 Loaded plugins: fastestmirror
 Determining fastest mirrors
  * base: ftp.heanet.ie
